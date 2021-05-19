@@ -72,5 +72,9 @@ workflows:
   build_test_analyze: 
     jobs:
       - build
-      - test
-      - analyze
+      - test:
+          requires:
+            - build
+      - analyze:
+          requires:
+            - test
